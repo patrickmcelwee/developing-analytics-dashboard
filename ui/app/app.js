@@ -14,6 +14,7 @@
     'app.root',
     'app.search',
     'app.user',
+    'ml.analyticsDashboard',
     'ui.bootstrap',
     'ui.router',
     'ui.tinymce',

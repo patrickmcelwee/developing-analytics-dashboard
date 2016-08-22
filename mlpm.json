@@ -4,5 +4,6 @@
   "description": "Sample app generated with slush-marklogic-node",
   "private": true,
   "dependencies": {
+    "analytics-dashboard": "0.0.*"
   }
 }

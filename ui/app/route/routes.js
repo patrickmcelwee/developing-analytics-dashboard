@@ -68,6 +68,15 @@
           navClass: 'fa-search'
         }
       })
+      .state('root.ml-analytics-dashboard', {
+        url: '/ml-analytics-dashboard',
+        template: '<ml-analytics-dashboard></ml-analytics-dashboard>',
+        navLabel: {
+          text: 'Analytics',
+          area: 'dashboard',
+          navClass: 'fa-wpforms'
+        },
+      })
       .state('root.create', {
         url: '/create',
         templateUrl: 'app/create/create.html',

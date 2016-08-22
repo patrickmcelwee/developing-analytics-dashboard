@@ -98,6 +98,23 @@ function proxy(req, res) {
   console.log(
     req.method + ' ' + req.path + ' proxied to ' +
     options.mlHost + ':' + options.mlHttpPort + path);
+   // Analytics Dashboard
+  if (queryString) {
+    var querystring = require('querystring');
+    var params = querystring.parse(queryString);
+    var category = params.category;
+    // Can use the 'category' parameter only with multipart/mixed accept.
+
+    if (category) {
+      var multipartHeader = 'multipart/mixed';
+      if (req.headers.accept) {
+        req.headers.accept = multipartHeader;
+      } else if (req.headers.Accept) {
+        req.headers.Accept = multipartHeader;
+      }
+    }
+  }
+  // end of Analytics Dashboard
   var mlReq = http.request({
     hostname: options.mlHost,
     port: options.mlHttpPort,
