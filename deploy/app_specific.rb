@@ -8,6 +8,37 @@
 #
 class ServerConfig
 
+  def deploy_data
+    log_header "Deploying Patient XML"
+    arguments = %W{
+      import -input_file_path data/claims-small/summary
+      -input_file_type delimited_text
+      -delimited_root_name patient-summary
+      -output_uri_prefix /patients/
+      -output_uri_suffix .xml
+      -output_collections patient
+    }
+    ruby_flavored_mlcp(arguments)
+  end
+
+  def log_header(txt)
+    logger.info(%Q{########################\n# #{txt}\n########################})
+  end
+
+  def ruby_flavored_mlcp(arguments)
+    arguments.concat(role_permissions)
+    arguments.each do |arg|
+      ARGV.push(arg)
+    end
+    mlcp
+  end
+
+  def role_permissions
+    role = @properties['ml.app-name'] + "-role"
+    %W{ -output_permissions
+        #{role},read,#{role},update,#{role},insert,#{role},execute}
+  end
+
   #
   # You can easily "override" existing methods with your own implementations.
   # In ruby this is called monkey patching
