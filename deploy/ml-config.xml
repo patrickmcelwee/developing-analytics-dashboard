@@ -254,6 +254,55 @@
           <range-value-positions>false</range-value-positions>
         </range-element-index>
 
+        <!-- <range-element-index> -->
+        <!--   <scalar-type>date</scalar-type> -->
+        <!--   <namespace-uri/> -->
+        <!--   <localname>registered</localname> -->
+        <!--   <range-value-positions>false</range-value-positions> -->
+        <!-- </range-element-index> -->
+
+        <range-element-index>
+          <scalar-type>decimal</scalar-type>
+          <namespace-uri/>
+          <localname>MEDREIMB_IP</localname>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+
+        <!-- START Northwind INDEXES -->
+
+        <range-element-index>
+          <scalar-type>string</scalar-type>
+          <namespace-uri/>
+          <localname>ProductName</localname>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+
+        <range-element-index>
+          <scalar-type>int</scalar-type>
+          <namespace-uri/>
+          <localname>EmployeeID</localname>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+
+        <range-element-index>
+          <scalar-type>decimal</scalar-type>
+          <namespace-uri/>
+          <localname>Freight</localname>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+
+        <range-element-index>
+          <scalar-type>decimal</scalar-type>
+          <namespace-uri>http://marklogic.com/analytics-dashboard/northwind</namespace-uri>
+          <localname>OrderTotal OrderDetailTotal</localname>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+
+        <!-- END Northwind INDEXES -->
+
+        <!-- START DMLC-INSURANCE INDEXES -->
+
         <range-element-index>
           <scalar-type>date</scalar-type>
           <namespace-uri/>
@@ -324,6 +373,54 @@
           <range-value-positions>false</range-value-positions>
           <invalid-values>reject</invalid-values>
         </range-path-index>
+
+        <!-- START NORTHWIND INDEXES -->
+
+        <range-path-index>
+          <scalar-type>string</scalar-type>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <path-expression>//Customer/CompanyName</path-expression>
+          <range-value-positions>false</range-value-positions>
+          <invalid-values>reject</invalid-values>
+        </range-path-index>
+
+        <range-path-index>
+          <scalar-type>string</scalar-type>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <path-expression>//Customer/City</path-expression>
+          <range-value-positions>false</range-value-positions>
+          <invalid-values>reject</invalid-values>
+        </range-path-index>
+
+        <range-path-index>
+          <scalar-type>string</scalar-type>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <path-expression>//Customer/Country</path-expression>
+          <range-value-positions>false</range-value-positions>
+          <invalid-values>reject</invalid-values>
+        </range-path-index>
+
+        <!-- END NORTHWIND INDEXES -->
+
+        <!-- START DMLC-INSURANCE INDEXES -->
+
+        <range-path-index>
+          <scalar-type>string</scalar-type>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <path-expression>//Claim[@kind="claim"]/statusDescription</path-expression>
+          <range-value-positions>false</range-value-positions>
+          <invalid-values>reject</invalid-values>
+        </range-path-index>
+
+        <range-path-index>
+          <scalar-type>decimal</scalar-type>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <path-expression>//FinancialProvision[@kind="lossReserveTotalAmount"]/amount</path-expression>
+          <range-value-positions>false</range-value-positions>
+          <invalid-values>reject</invalid-values>
+        </range-path-index>
+
+        <!-- END DMLC-INSURANCE INDEXES -->
 
 <!--
         <range-path-index>

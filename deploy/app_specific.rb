@@ -9,6 +9,70 @@
 class ServerConfig
 
   def deploy_data
+    deploy_patient_claims
+    deploy_insurance_claims
+    deploy_northwind
+  end
+
+  def deploy_northwind
+    log_header "Deploying Northwind raw data"
+    clean_collections(['northwind-raw'])
+    arguments = %W{
+      import -input_file_path data/northwind/raw
+      -input_compressed
+      -output_uri_replace "#{ServerConfig.expand_path("#{@@path}/../data")},'',.zip,''"
+      -output_collections northwind,northwind-raw
+    }
+    ruby_flavored_mlcp(arguments)
+
+    log_header "Deploying Northwind employees"
+    clean_collections(['northwind-employees'])
+    arguments = %W{
+      import -input_file_path data/northwind/employees
+      -input_compressed
+      -output_uri_replace "#{ServerConfig.expand_path("#{@@path}/../data")},'',.zip,''"
+      -output_collections northwind,northwind-employees
+    }
+    ruby_flavored_mlcp(arguments)
+
+    log_header "Deploying Northwind order details"
+    clean_collections(['northwind-order-details'])
+    arguments = %W{
+      import -input_file_path data/northwind/order-details
+      -input_compressed
+      -output_uri_replace "#{ServerConfig.expand_path("#{@@path}/../data")},'',.zip,''"
+      -output_collections northwind,northwind-order-details
+      -transform_module /transform/northwind-order-details.xqy
+      -transform_namespace http://marklogic.com/analytics-dashboard/northwind
+    }
+    ruby_flavored_mlcp(arguments)
+
+    log_header "Deploying Northwind orders, harmonized"
+    clean_collections(['northwind-orders'])
+    arguments = %W{
+      import -input_file_path data/northwind/orders
+      -input_compressed
+      -output_uri_replace "#{ServerConfig.expand_path("#{@@path}/../data")},'',.zip,''"
+      -output_collections northwind,northwind-orders
+      -transform_module /transform/northwind-orders.xqy
+      -transform_namespace http://marklogic.com/analytics-dashboard/northwind
+    }
+    ruby_flavored_mlcp(arguments)
+  end
+
+  def deploy_insurance_claims
+    log_header "Deploying DMLC Insurance Claims"
+    clean_collections(['insurance-claims'])
+    arguments = %W{
+      import -input_file_path data/dmlc-insurance/claims
+      -input_compressed
+      -output_uri_replace "#{ServerConfig.expand_path("#{@@path}/../data")},'',.zip,''"
+      -output_collections insurance-claims
+    }
+    ruby_flavored_mlcp(arguments)
+  end
+
+  def deploy_patient_claims
     log_header "Deploying Patient XML"
     arguments = %W{
       import -input_file_path data/claims-small/summary
