@@ -165,7 +165,7 @@ class ServerConfig
 
     # Note: you can also move mlpm.json into src/ext/ and deploy plain modules (not REST extensions) that way.
 
-    #deploy_packages
+    deploy_packages
     original_deploy_modules
   end
   
@@ -249,23 +249,24 @@ class ServerConfig
     end
   end
 
-  def clean_collections()
-    what = ARGV.shift
-    r = execute_query(
-      %Q{
-        xquery version "1.0-ml";
+  def clean_collections(collections)
+    collections.each do |collection|
+      r = execute_query(
+        %Q{
+          xquery version "1.0-ml";
 
-        for $collection in fn:tokenize("#{what}", ",")
-        where fn:exists(fn:collection($collection)[1])
-        return (
-          xdmp:collection-delete($collection),
-          "Cleaned collection " || $collection
-        )
-      },
-      { :db_name => @properties["ml.content-db"]}
-    )
-    r.body = parse_json r.body
-    logger.info r.body
+          for $collection in fn:tokenize("#{collection}", ",")
+          where fn:exists(fn:collection($collection)[1])
+          return (
+            xdmp:collection-delete($collection),
+            "Cleaned collection " || $collection
+          )
+        },
+        { :db_name => @properties["ml.content-db"]}
+      )
+      r.body = parse_body r.body
+      logger.info r.body
+    end
   end
 
 end
