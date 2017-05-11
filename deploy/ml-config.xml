@@ -242,7 +242,7 @@
         <range-element-index>
           <scalar-type>string</scalar-type>
           <namespace-uri/>
-          <localname>eyeColor SP_STATE_CODE gender isActive</localname>
+          <localname>eyeColor SP_STATE_CODE gender isActive ProductName</localname>
           <collation>http://marklogic.com/collation/codepoint</collation>
           <range-value-positions>false</range-value-positions>
         </range-element-index>
@@ -250,7 +250,7 @@
         <range-element-index>
           <scalar-type>int</scalar-type>
           <namespace-uri/>
-          <localname>age</localname>
+          <localname>age EmployeeID</localname>
           <range-value-positions>false</range-value-positions>
         </range-element-index>
 
@@ -264,31 +264,7 @@
         <range-element-index>
           <scalar-type>decimal</scalar-type>
           <namespace-uri/>
-          <localname>MEDREIMB_IP</localname>
-          <range-value-positions>false</range-value-positions>
-        </range-element-index>
-
-        <!-- START Northwind INDEXES -->
-
-        <range-element-index>
-          <scalar-type>string</scalar-type>
-          <namespace-uri/>
-          <localname>ProductName</localname>
-          <collation>http://marklogic.com/collation/codepoint</collation>
-          <range-value-positions>false</range-value-positions>
-        </range-element-index>
-
-        <range-element-index>
-          <scalar-type>int</scalar-type>
-          <namespace-uri/>
-          <localname>EmployeeID</localname>
-          <range-value-positions>false</range-value-positions>
-        </range-element-index>
-
-        <range-element-index>
-          <scalar-type>decimal</scalar-type>
-          <namespace-uri/>
-          <localname>Freight</localname>
+          <localname>MEDREIMB_IP Freight</localname>
           <range-value-positions>false</range-value-positions>
         </range-element-index>
 
@@ -307,13 +283,6 @@
           <scalar-type>date</scalar-type>
           <namespace-uri/>
           <localname>registered</localname>
-          <range-value-positions>false</range-value-positions>
-        </range-element-index>
-
-        <range-element-index>
-          <scalar-type>decimal</scalar-type>
-          <namespace-uri/>
-          <localname>MEDREIMB_IP</localname>
           <range-value-positions>false</range-value-positions>
         </range-element-index>
 
