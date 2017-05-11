@@ -9,8 +9,8 @@
 class ServerConfig
 
   def deploy_data
-    deploy_patient_claims
-    deploy_insurance_claims
+    # deploy_patient_claims
+    # deploy_insurance_claims
     deploy_northwind
   end
 
