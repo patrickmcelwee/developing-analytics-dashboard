@@ -573,6 +573,15 @@
         <privilege>
           <privilege-name>rest-reader</privilege-name>
         </privilege>
+        <privilege>
+          <privilege-name>xdmp:invoke</privilege-name>
+        </privilege>
+        <privilege>
+          <privilege-name>xdmp:with-namespaces</privilege-name>
+        </privilege>
+        <privilege>
+          <privilege-name>admin-module-read</privilege-name>
+        </privilege>
         <!-- remove the rest-writer privilege if read-only access is required -->
         <privilege>
           <privilege-name>rest-writer</privilege-name>
