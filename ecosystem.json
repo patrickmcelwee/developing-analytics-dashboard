@@ -21,7 +21,7 @@
     "prod": {
       "user": "pmcelwee",
       "host": "van-dev5.demo.marklogic.com",
-      "repo": "https://github.com/patrickmcelwee/developing-analytics-dashboard.git",
+      "repo": "git@github.com:patrickmcelwee/developing-analytics-dashboard.git",
       "ref": "origin/master",
       "path": "/space/projects/developing-analytics-dashboard",
       "post-deploy": "npm install && bower install && gulp build"
