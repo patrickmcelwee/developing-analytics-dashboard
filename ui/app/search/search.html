@@ -20,6 +20,41 @@
         <ml-snippet set-snippet="ctrl.setSnippet(type)"></ml-snippet>
       </div>
       <ml-metrics search="ctrl.response" ></ml-metrics>
+
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <ml-analytics-embed
+               class="col-md-6"
+               report-uri="'/ml-analytics-dashboard-reports/embedded-959692.json'"
+               chart-id="'1'"
+               ml-search="ctrl.mlSearch"></ml-analytics-embed>
+             <ml-analytics-embed
+               class="col-md-6"
+               report-uri="'/ml-analytics-dashboard-reports/embedded-959692.json'"
+               chart-id="'2'"
+               ml-search="ctrl.mlSearch"></ml-analytics-embed>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <ml-analytics-embed
+               class="col-md-6"
+               report-uri="'/ml-analytics-dashboard-reports/embedded-959692.json'"
+               chart-id="'3'"
+               ml-search="ctrl.mlSearch"></ml-analytics-embed>
+             <ml-analytics-embed
+               class="col-md-6"
+               report-uri="'/ml-analytics-dashboard-reports/embedded-959692.json'"
+               chart-id="'4'"
+               ml-search="ctrl.mlSearch"></ml-analytics-embed>
+          </div>
+        </div>
+      </div>
+
+
       <ml-results template="app/search/search-results.html" results="ctrl.response.results"></ml-results>
     </div>
   </div>
