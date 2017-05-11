@@ -27,7 +27,7 @@
     "ml-utils": "withjam/ml-utils",
     "tinymce-dist": "4.3.12",
     "vkbeautify": "*",
-    "ml-analytics-dashboard-ng": "^1.1.0"
+    "ml-analytics-dashboard-ng": "^3.2.0"
   },
   "overrides": {
     "angular-highlightjs": {
