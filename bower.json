@@ -26,7 +26,7 @@
     "ml-search-ng": "https://github.com/patrickmcelwee/ml-search-ng.git#0.2.8",
     "ml-utils": "withjam/ml-utils",
     "tinymce-dist": "4.3.12",
-    "vkbeautify-wrapper": "*",
+    "vkbeautify": "*",
     "ml-analytics-dashboard-ng": "^1.1.0"
   },
   "overrides": {
@@ -35,15 +35,22 @@
         "angular": ">1.0.8",
         "highlightjs": "~8.7.0"
       }
+    },
+    "vkbeautify": {
+      "main": [
+        "vkbeautify.js"
+      ]
     }
   },
   "devDependencies": {
     "angular-mocks": "~1.4.4",
     "bardjs": "~0.1.8",
-    "sinon": "http://sinonjs.org/releases/sinon-1.16.1.js"
+    "sinon": "*"
   },
   "private": true,
   "resolutions": {
-    "angular": "~1.4.4"
+    "angular": "~1.4.4",
+    "angular-bootstrap": "^1.1",
+    "lodash": "~4.17.4"
   }
 }
