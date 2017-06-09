@@ -277,15 +277,6 @@
 
         <!-- END Northwind INDEXES -->
 
-        <!-- START DMLC-INSURANCE INDEXES -->
-
-        <range-element-index>
-          <scalar-type>date</scalar-type>
-          <namespace-uri/>
-          <localname>registered</localname>
-          <range-value-positions>false</range-value-positions>
-        </range-element-index>
-
         <!--
         Sample for:
           <name xmlns="http://marklogic.com/ns/sample">bob<name>
